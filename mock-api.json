@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id":  1,
+      "name": "Jane Doe"
+    },
+    {
+      "id":  2,
+      "name": "John Smith"
+    }
+  ],
+  "merits": [
+    {
+      "id":  1,
+      "templateID": 1,
+      "userId":  1
+    }
+  ],
+  "templates": [
+    {
+      "id": 1,
+      "name": "Merit Engineering Candidate"
+    },
+    {
+      "id": 2,
+      "name": "Merit Engineering Offer Letter"
+    }
+  ]
+}
