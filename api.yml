@@ -7,7 +7,47 @@ info:
 host: localhost:3000
 basePath: /
 paths:
-  /users/{userID}/merits:
+  /templates:
+    get:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      summary: Get a list of templates.
+      operationId: getTemplates
+      responses:
+        "200":
+          description: Retrieved all templates.
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Template"
+  /templates/{templateId}/merits:
+    get:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      summary: Get a list of merits for the given template.
+      operationId: getTemplatesMerits
+      parameters:
+        - name: templateId
+          minimum: 1
+          type: integer
+          in: path
+          required: true
+        - name: userId
+          minimum: 1
+          type: integer
+          in: query
+      responses:
+        "200":
+          description: Retrieved all merits for the given template.
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Merit"
+  /users/{userId}/merits:
     get:
       consumes:
         - application/json
@@ -16,22 +56,22 @@ paths:
       summary: Get a list of merits for the given user.
       operationId: getUsersMerits
       parameters:
-        - name: userID
+        - name: templateId
+          minimum: 1
+          type: integer
+          in: query
+        - name: userId
           minimum: 1
           type: integer
           in: path
           required: true
-        - name: meritTemplateID
-          minimum: 1
-          type: integer
-          in: query
       responses:
         "200":
           description: Retrieved all merits for the given user.
           schema:
             type: array
             items:
-              $ref: '#/definitions/Merit'
+              $ref: "#/definitions/Merit"
     post:
       consumes:
         - application/json
@@ -40,31 +80,41 @@ paths:
       summary: Create a merit for the given user.
       operationId: createUserMerit
       parameters:
-        - name: userID
-          minimum: 1
-          type: integer
-          in: path
-          required: true
         - name: merit
           in: body
           required: true
           schema:
             $ref: "#/definitions/Merit"
+        - name: userId
+          minimum: 1
+          type: integer
+          in: path
+          required: true
       responses:
         "201":
           description: Created the Merit for the given user.
           schema:
-            $ref: '#/definitions/Merit'
+            $ref: "#/definitions/Merit"
 definitions:
   Merit:
     type: object
     required:
-      - meritTemplateId
+      - templateId
       - userId
     properties:
       id:
         type: integer
-      meritTemplateId:
+      templateId:
         type: integer
       userId:
         type: integer
+  Template:
+    type: object
+    required:
+      - id
+      - string
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
