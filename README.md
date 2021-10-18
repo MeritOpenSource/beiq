@@ -1,14 +1,10 @@
 ## Mock API server
 
-The mock-api server can be ran with json-server. To install it:
+Run `npm install` in the directory of this project.
 
-> npm i -g json-server
+Once the dependencies have downloaded run `npm run mock-api` to start the server.
 
-To run it, execute the following command in the directory of `mock-api.json`
-
-> json-server mock-api.json
-
-The `api.yml` contains a swagger 2 specification for the mock-api server.
+The `api.yml` contains a swagger 2 specification for the mock-api server. You can paste the contents of `api.yml` in a [swagger editor](https://editor.swagger.io/) to get a human readable version.
 
 
 ## Database
