@@ -1,0 +1,20 @@
+{
+  "name": "beiq",
+  "version": "1.0.0",
+  "description": "The mock-api server can be ran with json-server. To install it:",
+  "scripts": {
+    "mock-api": "json-server mock-api.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeritOpenSource/beiq.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MeritOpenSource/beiq/issues"
+  },
+  "homepage": "https://github.com/MeritOpenSource/beiq#readme",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}
