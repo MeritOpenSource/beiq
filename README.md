@@ -1,20 +1,22 @@
-## Mock API server
+## How to use this Repo
+
+### Merit API Server
 
 Run `npm install` in the directory of this project.
 
 Once the dependencies have downloaded run `npm run mock-api` to start the server.
 
-The `api.yml` contains a swagger 2 specification for the mock-api server. You can paste the contents of `api.yml` in a [swagger editor](https://editor.swagger.io/) to get a human readable version. Below is a preview of the spec.
+The `api.yml` contains a swagger 2 specification for the mock-api server. You can paste the contents of `api.yml` in a [swagger editor](https://editor.swagger.io/) to get a human readable version. 
+Below is a preview of the spec.
 
-![api spec](/resources/api-spec.png)
+![api spec](resources/api-spec.png)
 
-
-## Database
+### Merit Checkin Database
 
 A sqlite database is provided with the following schema
 
-![database schema](/resources/db-schema.png)
+![database schema](resources/db-schema.png)
 
-The database has also been pre-populated with the following activity
+The database has also been pre-populated with the following events
 
-![pre-populated activity](/resources/activity.png)
+![pre-populated events](resources/events.png)
